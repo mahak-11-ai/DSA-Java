@@ -1,0 +1,333 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Convert_a_to_A",
+            "request": "launch",
+            "mainClass": "Convert_a_to_A",
+            "projectName": "DSA_92faee38"
+        },
+        {
+            "type": "java",
+            "name": "TwoDarr",
+            "request": "launch",
+            "mainClass": "dsa_crt.TwoDarr",
+            "projectName": "DSA_92faee38"
+        },
+        {
+            "type": "java",
+            "name": "recursion",
+            "request": "launch",
+            "mainClass": "dsa_crt.recursion",
+            "projectName": "DSA_92faee38"
+        },
+        {
+            "type": "java",
+            "name": "q4_searchin_2Darray",
+            "request": "launch",
+            "mainClass": "dsa_practice.linearSearch_ques.q4_searchin_2Darray",
+            "projectName": "DSA_92faee38"
+        },
+        {
+            "type": "java",
+            "name": "q3_searchin_FindMin",
+            "request": "launch",
+            "mainClass": "dsa_practice.linearSearch_ques.q3_searchin_FindMin",
+            "projectName": "DSA_92faee38"
+        },
+        {
+            "type": "java",
+            "name": "q2_searchin_range",
+            "request": "launch",
+            "mainClass": "dsa_practice.linearSearch_ques.q2_searchin_range",
+            "projectName": "DSA_92faee38"
+        },
+        {
+            "type": "java",
+            "name": "q1_searchin_string",
+            "request": "launch",
+            "mainClass": "dsa_practice.linearSearch_ques.q1_searchin_string",
+            "projectName": "DSA_92faee38"
+        },
+        {
+            "type": "java",
+            "name": "linearSearch",
+            "request": "launch",
+            "mainClass": "dsa_practice.linearSearch",
+            "projectName": "DSA_92faee38"
+        },
+        {
+            "type": "java",
+            "name": "reverseq3",
+            "request": "launch",
+            "mainClass": "dsa_practice.reverseq3",
+            "projectName": "DSA_92faee38"
+        },
+        {
+            "type": "java",
+            "name": "maxq2",
+            "request": "launch",
+            "mainClass": "dsa_practice.maxq2",
+            "projectName": "DSA_92faee38"
+        },
+        {
+            "type": "java",
+            "name": "swapq1",
+            "request": "launch",
+            "mainClass": "dsa_practice.swapq1",
+            "projectName": "DSA_92faee38"
+        },
+        {
+            "type": "java",
+            "name": "day4_multidimension_ArrayList",
+            "request": "launch",
+            "mainClass": "dsa_practice.day4_multidimension_ArrayList",
+            "projectName": "DSA_92faee38"
+        },
+        {
+            "type": "java",
+            "name": "day3_ArrayList",
+            "request": "launch",
+            "mainClass": "dsa_practice.day3_ArrayList",
+            "projectName": "DSA_92faee38"
+        },
+        {
+            "type": "java",
+            "name": "day2_2Darr",
+            "request": "launch",
+            "mainClass": "dsa_practice.day2_2Darr",
+            "projectName": "DSA_92faee38"
+        },
+        {
+            "type": "java",
+            "name": "day1_practice",
+            "request": "launch",
+            "mainClass": "dsa_practice.day1_practice",
+            "projectName": "DSA_92faee38"
+        },
+        {
+            "type": "java",
+            "name": "day1_passingInFunctions",
+            "request": "launch",
+            "mainClass": "dsa_practice.day1_passingInFunctions",
+            "projectName": "DSA_92faee38"
+        },
+        {
+            "type": "java",
+            "name": "day1_arraysandarrayslist",
+            "request": "launch",
+            "mainClass": "dsa_practice.day1_arraysandarrayslist",
+            "projectName": "DSA_92faee38"
+        },
+        {
+            "name": "(Windows) Launch",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "enter program name, for example ${workspaceFolder}/a.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "console": "externalTerminal"
+        },
+        {
+            "name": "(Windows) Attach",
+            "type": "cppvsdbg",
+            "request": "attach"
+        },
+        {
+            "name": "(gdb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "enter program name, for example ${workspaceFolder}/a.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/path/to/gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "(gdb) Pipe Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "enter program name, for example ${workspaceFolder}/a.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "pipeTransport": {
+                "debuggerPath": "/usr/bin/gdb",
+                "pipeProgram": "<full path to pipe program such as plink.exe>",
+                "pipeArgs": [],
+                "pipeCwd": ""
+            },
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "(gdb) Pipe Attach",
+            "type": "cppdbg",
+            "request": "attach",
+            "program": "enter program name, for example ${workspaceFolder}/a.exe",
+            "processId": "${command:pickRemoteProcess}",
+            "pipeTransport": {
+                "debuggerPath": "/usr/bin/gdb",
+                "pipeProgram": "<full path to pipe program such as plink.exe>",
+                "pipeArgs": [],
+                "pipeCwd": ""
+            },
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "(gdb) Bash on Windows Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "enter program name, for example ${workspaceFolder}/a.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "pipeTransport": {
+                "debuggerPath": "/usr/bin/gdb",
+                "pipeProgram": "${env:windir}\\system32\\bash.exe",
+                "pipeArgs": [
+                    "-c"
+                ],
+                "pipeCwd": ""
+            },
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "(gdb) Bash on Windows Attach",
+            "type": "cppdbg",
+            "request": "attach",
+            "program": "enter program name, for example ${workspaceFolder}/a.exe",
+            "processId": "${command:pickRemoteProcess}",
+            "pipeTransport": {
+                "debuggerPath": "/usr/bin/gdb",
+                "pipeProgram": "${env:windir}\\system32\\bash.exe",
+                "pipeArgs": [
+                    "-c"
+                ],
+                "pipeCwd": ""
+            },
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "(gdb) Attach",
+            "type": "cppdbg",
+            "request": "attach",
+            "program": "enter program name, for example ${workspaceFolder}/a.exe",
+            "MIMode": "gdb",
+            "miDebuggerPath": "/path/to/gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "(Windows) Launch",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "enter program name, for example ${workspaceFolder}/a.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "console": "externalTerminal"
+        },
+        {
+            "name": "(gdb) Attach",
+            "type": "cppdbg",
+            "request": "attach",
+            "program": "enter program name, for example ${workspaceFolder}/a.exe",
+            "MIMode": "gdb",
+            "miDebuggerPath": "/path/to/gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}
