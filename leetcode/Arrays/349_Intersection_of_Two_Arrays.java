@@ -40,107 +40,161 @@ IDEA:
 1. Use two nested loops.
 2. Compare every element of nums1 with every element
    of nums2.
-3. If nums1[i] == nums2[j], add the element to a HashSet.
+3. If nums1[i] == nums2[j], add it to a HashSet.
 4. HashSet automatically removes duplicates.
-5. Convert the HashSet into an int[] because the method
-   needs to return an array.
+5. Convert the HashSet into int[].
 
-Example:
+TIME: O(n * m)
 
-nums1 = [4,9,5]
-nums2 = [9,4,9,8,4]
-
-The loops may find:
-
-4
-9
-9
-4
-
-But HashSet stores:
-
-[4,9]
-
-because a Set does not allow duplicate elements.
+SPACE: O(min(n,m)) approximately
 
 
-========================================================
-IMPORTANT BUG I MADE
-========================================================
+IMPORTANT BUG I MADE:
 
 Initially I created the result array before filling
 the HashSet:
 
     int[] result = new int[ans.size()];
 
-At that time:
+At that point ans was empty, so:
 
     ans.size() = 0
 
-because the HashSet was still empty.
+Therefore:
 
-So result became:
+    result = new int[0]
 
-    new int[0]
-
-After that, adding elements to the HashSet does NOT
-automatically resize the already-created array.
+The result array does not automatically grow when
+the HashSet grows.
 
 CORRECT ORDER:
 
 1. Fill HashSet
-2. Create result array using ans.size()
+2. Create result array
 3. Copy HashSet into result
 4. Return result
+
+
+========================================================
+APPROACH 2: OPTIMAL - HASHSET
+========================================================
+
+IDEA:
+
+Instead of comparing every element of nums1 with every
+element of nums2, store nums1 elements in a HashSet.
+
+Then traverse nums2 and check whether the current element
+exists in the HashSet.
+
+HashSet lookup is O(1) average.
+
+Steps:
+
+1. Create a HashSet containing all elements of nums1.
+2. Create another HashSet for the answer.
+3. Traverse nums2.
+4. If nums2[i] exists in the first HashSet, add it
+   to the answer HashSet.
+5. Convert the answer HashSet into an int[].
+
+
+Example:
+
+nums1 = [4,9,5]
+nums2 = [9,4,9,8,4]
+
+nums1Set:
+
+    {4,9,5}
+
+Traverse nums2:
+
+    9 → exists → add 9
+    4 → exists → add 4
+    9 → already in answer
+    8 → doesn't exist
+    4 → already in answer
+
+Answer:
+
+    [4,9]
+
+
+========================================================
+WHY TWO HASHSETS?
+========================================================
+
+First HashSet:
+
+    Stores elements of nums1
+    → used for fast searching
+
+Second HashSet:
+
+    Stores intersection
+    → automatically prevents duplicates
 
 
 ========================================================
 TIME COMPLEXITY
 ========================================================
 
-Two nested loops:
+Creating nums1 HashSet:
+    O(n)
 
-    O(n * m)
+Traversing nums2:
+    O(m)
 
-where:
-    n = nums1.length
-    m = nums2.length
+HashSet lookup:
+    O(1) average
 
-HashSet insertion is O(1) average.
+Total:
+
+    O(n + m)
 
 
 ========================================================
 SPACE COMPLEXITY
 ========================================================
 
-HashSet stores the unique intersection elements.
+First HashSet can contain n elements.
 
-    O(min(n,m)) approximately
+Second HashSet can contain up to min(n,m) elements.
 
-The result array also contains the intersection.
+Therefore:
+
+    O(n + m)
 
 
 ========================================================
 KEY LEARNING
 ========================================================
 
-1. HashSet does not store duplicate values.
+1. HashSet is useful when we need unique elements.
 
-2. Use HashSet when the answer needs unique elements.
+2. HashSet lookup is O(1) average.
 
-3. A collection's size must be known AFTER adding elements
-   if we use that size to create an array.
+3. Instead of comparing every pair, store elements
+   and check for existence.
 
-4. An array has fixed size. It does not automatically grow.
+4. This reduces the brute-force O(n * m) approach
+   to O(n + m).
 
-5. When returning int[] from a HashSet<Integer>, we need
-   to manually copy the elements into the array.
+5. When converting a HashSet to an array, create the
+   array AFTER the HashSet has been populated.
 
 
 ========================================================
-NEXT STEP:
+PATTERN:
 
-Try the optimal approach using HashSet without nested loops.
+Need to check whether an element exists quickly?
+        ↓
+Think HashSet / HashMap
+
+Need unique elements?
+        ↓
+Think HashSet
 ========================================================
 */
 
@@ -148,11 +202,14 @@ import java.util.HashSet;
 
 class Solution {
 
-    public int[] intersection(int[] nums1, int[] nums2) {
+    // =====================================================
+    // APPROACH 1: BRUTE FORCE + HASHSET
+    // =====================================================
+
+    public int[] intersectionBruteForce(int[] nums1, int[] nums2) {
 
         HashSet<Integer> ans = new HashSet<>();
 
-        // Compare every element of nums1 with nums2
         for (int i = 0; i < nums1.length; i++) {
 
             for (int j = 0; j < nums2.length; j++) {
@@ -163,12 +220,47 @@ class Solution {
             }
         }
 
-        // Create result AFTER HashSet is filled
         int[] result = new int[ans.size()];
 
         int i = 0;
 
+        for (int num : ans) {
+            result[i++] = num;
+        }
+
+        return result;
+    }
+
+
+    // =====================================================
+    // APPROACH 2: OPTIMAL - HASHSET
+    // =====================================================
+
+    public int[] intersection(int[] nums1, int[] nums2) {
+
+        // Store all elements of nums1
+        HashSet<Integer> nums1Set = new HashSet<>();
+
+        for (int num : nums1) {
+            nums1Set.add(num);
+        }
+
+        // Store unique intersection elements
+        HashSet<Integer> ans = new HashSet<>();
+
+        // Check every element of nums2
+        for (int num : nums2) {
+
+            if (nums1Set.contains(num)) {
+                ans.add(num);
+            }
+        }
+
         // Convert HashSet to int[]
+        int[] result = new int[ans.size()];
+
+        int i = 0;
+
         for (int num : ans) {
             result[i++] = num;
         }
