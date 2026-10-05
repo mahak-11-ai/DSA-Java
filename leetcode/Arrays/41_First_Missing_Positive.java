@@ -66,3 +66,77 @@ What I Learned:
 - Passing most test cases does not mean the algorithm is efficient enough.
 - Need to find an O(n) time and O(1) space approach next.
 */
+
+
+/*
+
+
+Approach: Index Placement / Cyclic Sort (OPTIMAL)
+
+Idea:
+- For an array of length n, the answer must be between 1 and n + 1.
+- We try to place every valid positive number at its correct index.
+- Number 1 should be at index 0.
+- Number 2 should be at index 1.
+- Number 3 should be at index 2.
+- In general, number x should be at index x - 1.
+- Ignore numbers <= 0 and numbers > n.
+
+After placing the numbers, the first index i where
+nums[i] != i + 1 gives the first missing positive.
+
+Example:
+nums = [3, 4, -1, 1, 2]
+
+After rearranging:
+[1, 2, 3, 4, -1]
+
+Index 0 → 1 ✓
+Index 1 → 2 ✓
+Index 2 → 3 ✓
+Index 3 → 4 ✓
+Index 4 → 5 ✗
+
+Answer = 5
+
+Time Complexity: O(n)
+Space Complexity: O(1)
+
+What I Learned:
+- An array can be used as its own hash/index structure.
+- For a positive number x, its correct index is x - 1.
+- Cyclic placement can achieve O(n) time and O(1) extra space.
+*/
+
+class Solution {
+    public int firstMissingPositive(int[] nums) {
+
+        int i = 0;
+
+        while (i < nums.length) {
+
+            int correctIndex = nums[i] - 1;
+
+            if (nums[i] > 0 &&
+                nums[i] <= nums.length &&
+                nums[i] != nums[correctIndex]) {
+
+                int temp = nums[i];
+                nums[i] = nums[correctIndex];
+                nums[correctIndex] = temp;
+
+            } else {
+                i++;
+            }
+        }
+
+        for (i = 0; i < nums.length; i++) {
+
+            if (nums[i] != i + 1) {
+                return i + 1;
+            }
+        }
+
+        return nums.length + 1;
+    }
+}
