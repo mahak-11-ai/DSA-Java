@@ -107,6 +107,48 @@ What I Learned:
 - For a positive number x, its correct index is x - 1.
 - Cyclic placement can achieve O(n) time and O(1) extra space.
 */
+/*
+LeetCode 41: First Missing Positive
+
+Optimal Approach: Index Placement
+
+Key Idea:
+For every valid number x, its correct position is index x - 1.
+
+Example:
+1 → index 0
+2 → index 1
+3 → index 2
+4 → index 3
+
+
+Why TWO loops?
+
+1. PLACE → while loop
+   Put every valid number x at index x - 1.
+   After swapping, don't increase i because the new number
+   at index i may also need to be placed.
+
+2. CHECK → for loop
+   After placement, scan the array.
+   The first index i where nums[i] != i + 1 means
+   i + 1 is the first missing positive.
+
+Memory Trick:
+PLACE → CHECK
+
+
+Why did Brute Force get TLE?
+The brute-force approach searches the entire array repeatedly
+for every missing number.
+
+Time: O(n²)
+Space: O(1)
+
+Optimal:
+Time: O(n)
+Space: O(1)
+*/
 
 class Solution {
     public int firstMissingPositive(int[] nums) {
